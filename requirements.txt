@@ -1,0 +1,15 @@
+# Core libraries
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.2
+
+# Visualization (used in notebook)
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# Web app framework
+streamlit==1.39.0
+
+# For Jupyter notebook (optional)
+jupyter==1.1.1
+notebook==7.2.2
