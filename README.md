@@ -18,10 +18,11 @@ EV-Range-Predictor/
 ├── app.py                     # Streamlit web application
 ├── EV range prediction.ipynb  # Data analysis, model training, and evaluation
 ├── .streamlit/
-│   └── secrets.toml            # Stores secure model and scaler paths
-├── RF_regressor.pkl        	# Trained Random Forest model
-├── scaler.pkl              	# Fitted StandardScaler object
-└── README.md                   # Project documentation
+│   └── secrets.toml           # Stores secure model and scaler paths
+├── RF_regressor.pkl        	 # Trained Random Forest model
+├── scaler.pkl              	 # Fitted StandardScaler object
+├── README.md                  # Project documentation
+└── requirements.txt           # Requirements
 ```
 
 ---
