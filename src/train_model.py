@@ -3,7 +3,7 @@ from sklearn.ensemble import AdaBoostRegressor
 from sklearn.linear_model import LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
-import pandas as pd
+import pickle
 
 from src.config import *
 from src.evaluate_model import evaluate_model
@@ -102,15 +102,17 @@ def train_model(X_train,X_test,y_train,y_test):
         model_name = list(model_optimized.keys())[i]
         model = list(model_optimized.values())[i]
         model.fit(X_train,y_train)
-        
         y_train_pred = model.predict(X_train)
         y_test_pred = model.predict(X_test)
-        
         mae_train, rmse_train, r2_train, adj_r2_train = evaluate_model(X_train,y_train, y_train_pred)
         mae_test, rmse_test, r2_test, adj_r2_test = evaluate_model(X_test,y_test, y_test_pred)
-        print("model training ok!")
-        return model_optimized['RandomForest']
-
+    
+    best_model = model_optimized['RandomForest']
+    pickle_file = 'model/RF_regressor.pkl'    
+    with open (pickle_file, 'wb') as file:
+        pickle.dump(best_model, file)
+    print(f'Model saved as {pickle_file}')
+    
 
         
 
