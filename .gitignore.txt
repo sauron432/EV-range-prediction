@@ -1,4 +1,5 @@
 .venv/
+.venv
 .streamlit/
 .vscode/
 *.py[cod]
