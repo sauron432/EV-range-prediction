@@ -1,6 +1,0 @@
-.venv/
-.venv
-.streamlit/
-.vscode/
-*.py[cod]
-*$py.class
