@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI 
 from pydantic import BaseModel
 import joblib
@@ -11,11 +12,13 @@ class EVInput(BaseModel):
     acceleration_0_100_s: float
     fast_charging_power_kw_dc: float
 
-model_path = "model/RF_regressor.pkl"
-scaler_path  = "model/scaler.pkl"
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+model_path = os.path.join(BASE_DIR, "model", "RF_regressor.pkl")
+scaler_path = os.path.join(BASE_DIR, "model", "scaler.pkl")
 model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
-app = FastAPI(title= "EV range prediction")
+app = FastAPI(title="EV range prediction")
 
 @app.get("/")
 def status():
